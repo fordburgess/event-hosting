@@ -69,35 +69,13 @@
   color: #fff;
 }
 
-.how-it-works {
-  text-align: center;
+.featured {
+  padding: 0 30px;
+  text-align: left;
   padding-top: 20px;
   font-family: 'Comfortaa', cursive;
   font-size: 20px;
   margin-bottom: 20px;
-}
-
-
-.cards {
-  display: flex;
-  justify-content: center;
-  margin: 0px;
-  font-family: 'Noto Serif Display', serif;
-}
-
-.cards.home {
-  margin: 0 40px 50px 40px;
-}
-
-.card {
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 15px;
-  padding: 10px 10px 10px;
-  font-family: 'Noto Serif Display', serif;
 }
 
 .card img {
@@ -110,11 +88,54 @@
   padding-top: 15px;
  }
 
- .works {
-   padding-bottom: 20px;
+ .featured-head {
+   margin-bottom: 5px;
+   line-height: 45px;
    padding-top: 20px;
-   font-size: 55px !important;
+   font-size: 45px !important;
    font-family: 'Noto Serif Display', serif;
+ }
+
+ .featured-subhead {
+  font-size: 20px !important;
+  font-family: 'Roboto';
+  font-style: italic;
+ }
+
+ .featured-list {
+  width: 100%;
+  justify-content: flex-start;
+  display: flex;
+
+}
+
+.venue-card {
+  width: 23%;
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+ }
+
+ .venue-card:not(:last-child) {
+  margin-right: 20px;
+ }
+
+ .venue-title {
+  font-family: 'Times New Roman';
+  font-size: 15px;
+  margin-bottom: 5px;
+ }
+
+ .venue-subinfo {
+  font-size: 12px;
+  font-family: 'Roboto';
+  font-weight: 300;
+  margin-bottom: 5px;
+  color: rgb(100, 100, 100);
  }
 
  .search-bar-container {
