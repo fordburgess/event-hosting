@@ -1,0 +1,29 @@
+# Ignore bundler config
+/.bundle
+
+# Ignore the default database
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore all log files
+/log/*.log
+/tmp
+/cache
+/public/assets
+/public/packs
+/public/packs-test
+/coverage
+
+# Ignore sensitive files
+/config/master.key
+/config/credentials.yml.enc
+
+# Ignore test and development environment specific files
+/.byebug_history
+/.rspec
+/.rvmrc
+node_modules
+
+
+# env
+.env

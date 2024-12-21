@@ -1,0 +1,162 @@
+// Specific CSS for your home-page
+* {
+  margin: 0;
+  overscroll-behavior: none;
+}
+
+.min-height {
+  min-height: calc(100vh - 161.47px);
+
+}
+
+#container {
+  width: 100%;
+}
+
+#banner {
+  background-size: cover;
+  margin: 0;
+  position: relative;
+}
+
+.carousel-inner {
+  height: 650px;
+  img {
+    // background-position: center bottom;
+  }
+}
+
+.carousel-image {
+  object-fit: none;
+  object-position: bottom;
+}
+
+.heading {
+  position: relative;
+  text-align: center;
+  top: 200px;
+}
+
+#main {
+  font-size: 90px;
+  line-height: 90px;
+  color: white;
+  margin: 0;
+  font-family: 'Times New Roman';
+  // text-shadow: 2px 2px 3px black;
+  position: absolute;
+  text-align: center;
+  position: relative;
+}
+
+#second {
+  font-size: 35px;
+  font-weight: 300;
+  font-style: italic;
+  position: absolute;
+  text-align: center;
+  position: relative;
+  color: white;
+  margin: 0 0 30px 0;
+  font-family: 'Roboto';
+}
+
+#third {
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 350;
+  font-family: 'Roboto';
+  color: #fff;
+}
+
+.how-it-works {
+  text-align: center;
+  padding-top: 20px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+
+.cards {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  font-family: 'Noto Serif Display', serif;
+}
+
+.cards.home {
+  margin: 0 40px 50px 40px;
+}
+
+.card {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 15px;
+  padding: 10px 10px 10px;
+  font-family: 'Noto Serif Display', serif;
+}
+
+.card img {
+  width: 100%
+}
+
+ .card-text {
+  font-family: 'Noto Serif Display', serif;
+  padding-bottom: 10px;
+  padding-top: 15px;
+ }
+
+ .works {
+   padding-bottom: 20px;
+   padding-top: 20px;
+   font-size: 55px !important;
+   font-family: 'Noto Serif Display', serif;
+ }
+
+ .search-bar-container {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  #container {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  #container {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  #container {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  #container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  #container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

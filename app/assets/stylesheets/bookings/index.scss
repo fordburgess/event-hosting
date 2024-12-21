@@ -1,0 +1,94 @@
+.confirmation {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  height: 500px;
+}
+
+.confirm-head {
+  margin: 0;
+  color: white;
+  text-shadow: 2px 2px 3px black;
+  font-size: 100px;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Noto Serif Display', serif;
+  padding-top: 53px;
+
+}
+
+.confirm-text {
+  color: white;
+  text-align: center;
+  font-family: 'Noto Serif Display', serif;
+  text-shadow: 2px 2px 3px black;
+  font-size: 23px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.card-confirm {
+  display: flex;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 40px;
+  overflow: hidden;
+  border-radius: 4px;
+  position: relative;
+  justify-content: center;
+}
+
+.card-confirm img {
+  height: 300px;
+  width: 400px;
+  object-fit: cover;
+  padding: 0;
+  align-self: flex-start;
+}
+
+.card-confirm h2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0;
+  font-family: 'Noto Serif Display', serif;
+  align-self: center;
+}
+
+.card-confirm p {
+  font-size: 20px;
+  opacity: .7;
+  margin: 0;
+  font-family: 'Noto Serif Display', serif;
+  align-self: center;
+}
+
+.card-trip-pricing {
+  font-family: 'Noto Serif Display', serif;
+  align-self: flex-end;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.text-container {
+  padding: 16px;
+}
+
+.button-container {
+  margin: 0 auto;
+  margin-bottom: 40px;
+  margin: 40px;
+}
+
+.return-button {
+  padding: 15px 32px;
+  background-color: rgb(73, 121, 62);
+  color: white;
+  width: 48%;
+  transition: 0.4s ease;
+  text-align: center;
+  &:hover {
+    background-color: rgb(156, 194, 156);
+    color: white;
+  }
+}

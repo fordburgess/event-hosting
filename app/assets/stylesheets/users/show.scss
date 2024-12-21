@@ -1,0 +1,154 @@
+.nav-link {
+  color: #1b4332;
+  border-bottom-color: white;
+  background-color: white;
+
+  &:hover {
+    color: #1b4332;
+  }
+}
+
+.nav.nav-tabs {
+  margin:0px;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: white;
+  color: rgb(101, 131, 87);
+  border-bottom-color: white;
+}
+
+.tabs {
+  font-size: 24px;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  font-family: 'Noto Serif Display', serif;
+}
+
+.profile-info h3{
+  font-family: 'Noto Serif Display', serif;
+}
+
+.left-profile-container {
+  width: 25%;
+  margin-right: 10px;
+}
+
+.right-profile-container {
+  width: 75%;
+}
+
+.tab-content {
+  overflow: auto;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-right: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+  border-left: 1px solid #dee2e6;
+  height: 700px;
+  padding-top: 30px;
+  background-color: white;
+}
+
+.tab-content::-webkit-scrollbar {
+  width: 3px;
+}
+
+.tab-content::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  border-radius: 100px;
+}
+
+.tab-content::-webkit-scrollbar-thumb {
+  background-color: #76a561;
+  border-radius: 100px;
+}
+
+.profile-info {
+  align-items: center;
+  text-align: center;
+}
+
+.profile-info > img {
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-venue-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  margin: 0px 20px 20px 20px;
+  height: 200px;
+  border-radius: 3px;
+  position: relative;
+}
+
+.card-venue-product img {
+  height: 100%;
+  width: 40%;
+  object-fit: cover;
+}
+
+.card-venue-product h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  font-family: 'Noto Serif Display', serif;
+}
+
+.card-venue-product p {
+  font-size: 16px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-venue-product .card-venue-product-infos {
+  padding: 16px;
+}
+
+.card-venue-product-infos {
+  font-family: 'Noto Serif Display', serif;
+}
+
+
+.delete-venue {
+   position: absolute;
+  bottom: 15px;
+  right: 15px;
+  padding: 8px 20px;
+  background-color: rgb(153, 13, 13);
+  color: white;
+  transition: 0.4s ease;
+  &:hover {
+    background-color: rgb(194, 63, 63);
+    color: white;
+  }
+}
+
+.cancel-booking {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  padding: 8px 20px;
+  background-color: rgb(153, 13, 13);
+  color: white;
+  transition: 0.4s ease;
+  &:hover {
+    background-color: rgb(194, 63, 63);
+    color: white;
+  }
+}

@@ -1,0 +1,42 @@
+.navbar-lewagon {
+  justify-content: space-between;
+  background-color: #1b4332;
+  transition: 0.2s background-color ease;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand {
+  width: 40px;
+}
+
+.navbar-brand {
+  letter-spacing: 1.2px;
+}
+
+#logo img {
+  width: 100px;
+  color: white;
+}
+
+#navbarDropdown {
+  height: 40px;
+}
+
+.nav-item.item{
+  padding: 10px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  font-family: 'Work Sans', Helvetica, sans-serif;
+}
+
+.navbar-nav {
+  align-items: center;
+}
+// .navbar-lewagon-white {
+//   background-color: white;
+// }
