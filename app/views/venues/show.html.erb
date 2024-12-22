@@ -21,16 +21,17 @@
         <h5 class="host-user" style="font-family: Roboto; font-weight: 300"><%= @venue.location %></h5>
         <p class="meter" style="font-family: Roboto; font-weight: 300;"><%= @venue.square_meters %> m²</p>
       </div>
-      <p class="price"> £<%= @venue.rate %> per day <strong style="font-size: 15px; color: #646464;">(price may vary depending on number of guests)</strong></p>
+      <p class="price"> £<%= @venue.rate %>/hour <strong style="font-size: 15px; color: #646464;">(price may vary depending on number of guests)</strong></p>
       <div class="line-divider"> </div>
       <div class="description"><p style=" width: 100%; font-family: Times New Roman"><%= @venue.description %></p></div>
     </div>
-    <div style="width:35%;" class="owner-info">
+    <div style="width:35%; padding: 0 20px;" class="owner-info">
       <%= simple_form_for [@venue, @booking] do |f| %>
         <br>
         <%= f.input :start_date, label: "Date", class: "booking-input" %>
         <%= f.input :start_time %>
         <%= f.input :end_time %>
+        <%= f.input :guests, :as => :select, collection: ["10-50", "50-100", "100-150", "200+"], :selected => "10-50", label: "No. of Guests" %>
         <br>
         <%= f.submit "Book now", class:'submit-button' %>
       <% end %>
