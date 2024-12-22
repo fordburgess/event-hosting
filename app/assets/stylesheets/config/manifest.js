@@ -1,0 +1,1 @@
+//= link venues/show.scss
