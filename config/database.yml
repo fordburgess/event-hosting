@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: _VenuLet_production
-  username: _VenuLet
-  password: <%= ENV['_VENULET_DATABASE_PASSWORD'] %>
+  database: venulet_production
