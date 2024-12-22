@@ -1,13 +1,16 @@
-<div class="container">
+<div class="container" style="width: 100vw;">
   <div class="profile-container">
     <div class="left-profile-container">
       <div class="profile-info">
         <%# <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"> %>
         <% image_url = @user.photo.attached? ? @user.photo.key : 'https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60' %>
         <%= cl_image_tag image_url%>
-        <h3><%= @user.name %></h3>
-        <p><%= @user.email %></p>
-       </div>
+          <h3 style="font-size: 1rem; margin: 0 0 5px 0"><%= @user.name %></h3>
+          <p style="font-weight: 250; color: #646464; font-size: 0.9rem; margin: 0 0 5px 0"><%= @user.email %></p>
+          <p style="font-weight: 250; color: #646464; font-size: 0.9rem; margin: 0 0 5px 0">+44 7585 076889</p>
+          <p style="margin-bottom: 40px; font-weight: 250; color: #646464; font-size: 0.9rem;">Member since <%= @user.created_at.strftime('%B %d, %Y') %></p>
+        </div>
+      <%= link_to "Edit Details", edit_user_registration_path(@user), class: 'edit-details-link', style: 'font-size: 0.9rem;' %>
     </div>
 
     <div class="right-profile-container">
@@ -31,7 +34,6 @@
                 <h2 class='pb-2 border-bottom'><%= booking.venue.title %></h2>
                 <p><strong><em>Booking details:</em></strong></p>
                 <p>Check-in: <%= booking.start_date.strftime("%e %B %Y") %> </p>
-                <p>Check-out: <%= booking.end_date.strftime("%e %B %Y") %> </p>
                 <p>Rate: <%= booking.venue.rate %>/day</p>
               </div>
               <%= link_to "Cancel Booking",

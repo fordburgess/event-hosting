@@ -22,12 +22,17 @@
   font-size: 24px;
 }
 
+.container {
+  width: 100vw;
+  padding: 50px 100px 0 0;
+  box-sizing: border-box;
+}
+
 .profile-container {
   display: flex;
   justify-content: space-between;
-  margin-top: 40px;
-  margin-bottom: 50px;
   font-family: 'Noto Serif Display', serif;
+  width: 100%;
 }
 
 .profile-info h3{
@@ -72,15 +77,30 @@
 
 .profile-info {
   align-items: center;
-  text-align: center;
+  text-align: left;
 }
 
 .profile-info > img {
   border-radius: 50%;
-  width: 160px;
-  height: 160px;
+  width: 100px;
+  height: 100px;
   margin-bottom: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.edit-details-link {
+  padding: 10px 35px;
+  background-color: rgb(73, 121, 62);
+  color: white;
+  border: none;
+  transition: 0.4s ease;
+  margin-bottom: 30px;
+  font-family: 'Work Sans';
+
+  &:hover {
+    color: #fff;
+    background-color: rgb(156, 194, 156);
+  }
 }
 
 .card-venue-product {
