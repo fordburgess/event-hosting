@@ -30,8 +30,10 @@
             <h1 id="main">VenuLet</h1>
             <p id="second">Your dream venue starts here...</p>
             <p id="third">Find the perfect venue in just a few clicks.<br /> Fast, easy, and hassle-free booking for your next event.</p>
-            <%= link_to "Add a listing", new_venue_path, class: "btn", id: "btn-flat" %>
-            <%= link_to "Show venues", venues_path, class: "btn", id: "btn-flat" %>
+            <%= form_tag venues_path, method: :get, class: "location-search-form" do %>
+              <%= text_field_tag :location, params[:location], class: "location-search-input", placeholder: "Search by location" %>
+              <%= submit_tag "Go", class: "location-search-button" %>
+            <% end %>
           </div>
         </div>
     </div>

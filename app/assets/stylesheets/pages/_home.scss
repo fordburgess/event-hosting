@@ -69,6 +69,37 @@
   color: #fff;
 }
 
+.location-search-form {
+  margin-bottom: 20px;
+}
+
+.location-search-button {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background-color: #1b4332;
+  transition: 0.2s;
+  border: none;
+  box-shadow: none;
+}
+
+.location-search-button:hover {
+  cursor: pointer;
+  background-color: #2a684e;
+}
+
+.location-search-input {
+  border-radius: 4px;
+  padding: 8px 19px;
+  border: none;
+  margin-right: 10px;
+  background-color: #ffffffbf;
+}
+
+.location-search-input:focus {
+  outline: none;
+}
+
 .featured {
   padding: 0 30px;
   text-align: left;

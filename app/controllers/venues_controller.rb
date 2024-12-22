@@ -11,6 +11,8 @@ class VenuesController < ApplicationController
     query = query.where("rate <= ?", params[:max_price]) if params[:max_price].present?
     @venues = query
 
+    @location = params[:location]
+
     @markers = @venues.geocoded.map do |venue|
       {
         lat: venue.latitude,
