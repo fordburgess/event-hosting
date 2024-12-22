@@ -1,0 +1,25 @@
+databases:
+  - name: venulet_pgsql
+    ipAllowList: []
+    databaseName: _VenuLet_production
+    user: _VenuLet
+    region: frankfurt
+
+services:
+  - type: web
+    name: venulet_rails
+    env: ruby
+    repo: https://github.com/fordburgess/event-hosting
+    branch: master
+    rootDir: .
+    healthCheckPath: /
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: venulet_pgsql
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+    region: frankfurt
