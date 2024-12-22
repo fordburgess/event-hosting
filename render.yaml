@@ -14,7 +14,7 @@ services:
     rootDir: .
     healthCheckPath: /
     buildCommand: "./bin/render-build.sh"
-    startCommand: bundle exec puma -C config/puma.rb &
+    startCommand: "bundl exec rails server"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
