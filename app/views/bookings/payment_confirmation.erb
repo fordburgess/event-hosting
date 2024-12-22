@@ -1,1 +1,41 @@
-<h1>Payment Confirmation Page</h1>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,400;1,200&display=swap" rel="stylesheet">
+<div class="payment-confirmation-container">
+  <h1 class="payment-confirm-header" style="font-family: Noto Serif Display;">Confirm Your Booking</h1>
+  <div style="display: flex; justify-content: space-between;">
+    <div class="left-payment-container">
+      <div style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; align-items: center; width: 100%; justify-content: space-between; margin-bottom: 10px;">
+            <p style="margin: 0; font-family: Roboto; font-size: 0.85rem;">Pay with:</p>
+            <div style="display: flex;">
+              <%= image_tag 'visacard.png', style: "height: 25px; width: 27px; margin-right: 5px;" %>
+              <%= image_tag 'mastercard.png', style: "height: 25px; width: 27px; margin-right: 5px;" %>
+              <%= image_tag 'amex.png', style: "height: 25px; width: 27px; margin-right: 5px;" %>
+              <%= image_tag 'discover.png', style: "height: 25px; width: 27px;" %>
+            </div>
+          </div>
+          <p class="payment-info-label">Name on Card</p>
+          <input class="card-info-input" placeholder="John Doe" style="margin-bottom: 10px"/>
+          <p class="payment-info-label">Card Number</p>
+          <input class="card-info-input" placeholder="1111 2222 3333 4444" style="margin-bottom: 10px"/>
+          <div style="display: flex; justify-content: space-between">
+            <div style="width: 48%">
+              <p class="payment-info-label">Exp. Date</p>
+              <input class="card-info-input" placeholder="MM/YY"/>
+            </div>
+            <div style="width: 48%">
+              <p class="payment-info-label">Sec. Code</p>
+              <input class="card-info-input" placeholder="123"/>
+            </div>
+          </div>
+          </div>
+        <div>
+          <button class="submit-button">Confirm Payment</button>
+        </div>
+      </div>
+    </div>
+    <div class="right-payment-container">
+
+    </div>
+  </div>
+</div>
