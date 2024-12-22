@@ -17,10 +17,10 @@
       <div class="tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class='nav-item' role="presentation">
-            <button class="nav-link active" id="bookings-tab" data-bs-toggle="tab" data-bs-target="#bookings" type="button" role="tab" aria-controls="bookings" aria-selected="true">My bookings</button>
+            <button class="nav-link active" id="bookings-tab" data-bs-toggle="tab" data-bs-target="#bookings" type="button" role="tab" aria-controls="bookings" aria-selected="true">My Bookings</button>
           </li>
           <li class='nav-item' role="presentation">
-            <button class="nav-link" id="venues-tab" data-bs-toggle="tab" data-bs-target="#venues" type="button" role="tab" aria-controls="venues" aria-selected="false">My venues</button>
+            <button class="nav-link" id="venues-tab" data-bs-toggle="tab" data-bs-target="#venues" type="button" role="tab" aria-controls="venues" aria-selected="false">My Venues</button>
           </li>
         </ul>
       </div>
@@ -32,9 +32,10 @@
               <%= cl_image_tag booking.venue.photo.key %>
               <div class="card-venue-product-infos">
                 <h2 class='pb-2 border-bottom'><%= booking.venue.title %></h2>
-                <p><strong><em>Booking details:</em></strong></p>
-                <p>Check-in: <%= booking.start_date.strftime("%e %B %Y") %> </p>
-                <p>Rate: <%= booking.venue.rate %>/day</p>
+                <p style="margin-bottom: 10px;"><em>Booking details:</em></p>
+                <p style="font-family: Work Sans; margin: 0 0 0px 0;"><strong>Date:</strong> <%= booking.start_date.strftime("%e %B %Y") %> </p>
+                <p style="font-family: Work Sans; margin: 0 0 0px 0;"><strong>No. of Guests:</strong> <%= booking.guests %> </p>
+                <p style="font-family: Work Sans; margin: 0 0 0px 0;"><strong>Payment Amount:</strong> $<%= booking.total_payment.to_i %></p>
               </div>
               <%= link_to "Cancel Booking",
                 booking_path(booking),
@@ -49,13 +50,13 @@
           <div class="venue-cards">
             <% @current_user.venues.each do |venue| %>
             <div class="card-venue-product">
-              <%= cl_image_tag venue.photo.key %>
+              <%= cl_image_tag venue.photo.key, style: 'width: 250px;' %>
               <div class="card-venue-product-infos">
                 <h2 class='pb-2 border-bottom'><%= venue.title %></h2>
                 <p><strong><em>Venue details:</em></strong></p>
                 <p><%= venue.description.split(' ')[0..15].join(' ')  %>...</p>
                 <p>Rate: <%= venue.rate %>/day</p>
-                <%= link_to "Delete venue", venue_path(venue), method: :delete, data: { confirm: "Are you sure?"}, class:'btn btn-secondary delete-venue' %>
+                <%= link_to "Delete Venue", venue_path(venue), method: :delete, data: { confirm: "Are you sure?"}, class:'cancel-booking' %>
               </div>
             </div>
             <% end %>

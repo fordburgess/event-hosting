@@ -1,6 +1,5 @@
 .nav-link {
   color: #1b4332;
-  border-bottom-color: white;
   background-color: white;
 
   &:hover {
@@ -26,6 +25,7 @@
   width: 100vw;
   padding: 50px 100px 0 0;
   box-sizing: border-box;
+  margin-bottom: 100px;
 }
 
 .profile-container {
@@ -50,13 +50,13 @@
 
 .tab-content {
   overflow: auto;
-  border-top-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-right: 1px solid #dee2e6;
-  border-bottom: 1px solid #dee2e6;
-  border-left: 1px solid #dee2e6;
-  height: 700px;
+  // border-top-right-radius: 3px;
+  // border-bottom-left-radius: 3px;
+  // border-bottom-right-radius: 3px;
+  // border-right: 1px solid #dee2e6;
+  // border-bottom: 1px solid #dee2e6;
+  // border-left: 1px solid #dee2e6;
+  height: 600px;
   padding-top: 30px;
   background-color: white;
 }
@@ -161,6 +161,8 @@
 
 .cancel-booking {
   position: absolute;
+  font-size: 0.85rem;
+  font-family: 'Work Sans';
   bottom: 15px;
   right: 15px;
   padding: 8px 20px;
