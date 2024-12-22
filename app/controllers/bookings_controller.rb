@@ -10,6 +10,16 @@ class BookingsController < ApplicationController
     @booking.venue = @venue
     @booking.status = "Pending"
     @booking.user = current_user
+
+    start_time = @booking.start_time
+    end_time = @booking.end_time
+
+    duration_in_seconds = end_time - start_time
+    duration_in_hours = duration_in_seconds / 3600.0
+    total_payment = (@booking.venue.rate * duration_in_hours).round(2)
+
+    @booking.total_payment = total_payment
+
     if @booking.save
       redirect_to payment_confirmation_booking_path(@booking)
     else
@@ -63,6 +73,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :guests, :start_time, :end_time)
+    params.require(:booking).permit(:start_date, :end_date, :guests, :start_time, :end_time, :total_payment)
   end
 end
