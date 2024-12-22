@@ -15,7 +15,7 @@ def  attach_photo(user, url)
 end
 
 user1 = User.create( email:"fburg6824@gmail.com", password: "123456", name: "Ford Burgess", created_at: '2017-01-01 00:00:00')
-user2 = User.create(email: "john.smith23@hotmail.com", password: "password123", name: "John Smith", created_at: '2016-03-15 09:22:00')
+user2 = User.create(email: "john.mcclendon@hotmail.com", password: "password123", name: "John McClendon", created_at: '2016-03-15 09:22:00')
 user3 = User.create(email: "mariela.garcia45@yahoo.com", password: "mariela123", name: "Mariela Garcia", created_at: '2015-08-22 17:04:00')
 user4 = User.create(email: "michael.smith@gmail.com", password: "mike1234", name: "Michael Smith", created_at: '2016-11-10 12:15:00')
 user5 = User.create(email: "emily.jameson@gmail.com", password: "emilyjameson1", name: "Emily Jameson", created_at: '2016-06-30 08:30:00')
