@@ -7,6 +7,15 @@
   border-radius: 10px;
   padding-top: 20px;
 }
+
+.booking_start_date, .booking_start_time, .booking_end_time {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+// .booking_start_date, .booking_start_time, .booking_end_time input {
+//
+// }
+
 .line-divider {
   border: 0.4px solid black;
   margin-bottom: 20px;
@@ -60,4 +69,9 @@
 .description {
   font-family: 'Noto Serif Display', serif;
   font-size: 18px;
+}
+
+.reviews-section {
+  width: 100%;
+  margin-bottom: 100px;
 }

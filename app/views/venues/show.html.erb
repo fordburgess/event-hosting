@@ -12,7 +12,7 @@
   </div>
 </div>
 <div class="container-md pb-3">
-  <div class="d-flex" style="margin-bottom: 100px">
+  <div class="d-flex" style="margin-bottom: 50px">
     <div style="width: 65%;">
       <h2 class="title-host" style="font-family: Noto Serif Display; margin-bottom: 0">
         <%= @venue.title %>
@@ -28,12 +28,22 @@
     <div style="width:35%;" class="owner-info">
       <%= simple_form_for [@venue, @booking] do |f| %>
         <br>
-        <%= f.input :start_date %>
-
+        <%= f.input :start_date, label: "Date", class: "booking-input" %>
+        <%= f.input :start_time %>
+        <%= f.input :end_time %>
         <br>
         <%= f.submit "Book now", class:'submit-button' %>
       <% end %>
     </div>
+  </div>
+  <div class="reviews-section">
+    <div style="display: flex; align-items: center; margin-bottom: 10px">
+      <h3 style="font-family: Noto Serif Display; margin: 0 15px 0 0;">Reviews -</h3>
+      <%= image_tag 'star.png', style: "height: 20px; width: 20px; margin-right: 10px" %>
+      <p style="color: #646464; margin: 0; font-size: 1.5rem; margin-right: 5px">4.93</p>
+      <p style="color: #646464; margin: 0; font-size: 1rem;">(15 Reviews)</p>
+    </div>
+    <div class="line-divider"></div>
   </div>
 </div>
 
