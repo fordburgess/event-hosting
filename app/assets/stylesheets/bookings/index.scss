@@ -124,3 +124,21 @@
   padding: 5px;
   width: 100%;
 }
+
+.card-info-input:hover {
+  cursor: not-allowed;
+}
+
+.right-payment-container {
+  width: 45%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.payment-confirm-venue-photo {
+  width: 55%;
+  height: 30%;
+  border-radius: 3px;
+}
