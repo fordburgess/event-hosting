@@ -82,3 +82,9 @@ test:
 production:
   <<: *default
   database: venulet_production
+  username: venulet_production_user
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  port: 5432
+  encoding: unicode
+  pool: 5
+  timeout: 5000
