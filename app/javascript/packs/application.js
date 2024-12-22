@@ -10,13 +10,19 @@ import "channels"
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';  // Add Leaflet styles
 
-document.addEventListener('DOMContentLoaded', function () {
-  var map = L.map('map').setView([51.505, -0.09], 13);  // Set the initial view
+document.addEventListener('turbolinks:load', function () {
+  const mapElement = document.getElementById('map');
 
-  // Add OpenStreetMap tiles
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
+  if (mapElement) {
+    var map = L.map('map').setView([51.505, -0.09], 13);  // Set the initial view
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    map.invalidateSize();
+  }
 });
 
 Rails.start()
