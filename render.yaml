@@ -1,8 +1,8 @@
 databases:
-  - name: venulet_pgsql
+  - name: venulet_production
     ipAllowList: []
     databaseName: venulet_production
-    user: _VenuLet
+    user: venulet_production_user
     region: frankfurt
 
 services:
