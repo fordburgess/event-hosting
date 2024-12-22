@@ -15,7 +15,6 @@
 /coverage
 
 # Ignore sensitive files
-/config/master.key
 /config/credentials.yml.enc
 
 # Ignore test and development environment specific files
