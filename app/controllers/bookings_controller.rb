@@ -49,7 +49,15 @@ class BookingsController < ApplicationController
     reviews = @booking.venue.reviews
 
     @rating = (reviews.average(:rating).to_f).round(2)
+  end
 
+
+
+  def confirm_booking
+    @booking = Booking.find(params[:id])
+    @booking.update(status: "completed")
+
+    redirect_to booking_path(@booking), notice: "Payment confirmed successfully!"
   end
 
   private

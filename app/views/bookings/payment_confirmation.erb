@@ -31,7 +31,7 @@
           </div>
         <div>
           <p style="font-size: 0.85rem">*Payment is disabled because this business prefers that you pay at the venue. You can still confirm your booking</p>
-          <button class="submit-button">Confirm Booking</button>
+          <%= button_to "Confirm Booking", confirm_booking_booking_path(@booking), method: :patch, class: "submit-button" %>
         </div>
       </div>
     </div>
