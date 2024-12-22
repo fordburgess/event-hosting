@@ -8,9 +8,10 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @venue = Venue.find(params[:venue_id])
     @booking.venue = @venue
+    @booking.status = "Pending"
     @booking.user = current_user
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to payment_confirmation_booking_path(@booking)
     else
       render :show
     end
@@ -25,6 +26,10 @@ class BookingsController < ApplicationController
     @booking.destroy
 
     redirect_to user_path(current_user)
+  end
+
+  def payment_confirmation
+    @booking = Booking.find(params[:id])
   end
 
   private

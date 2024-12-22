@@ -1,16 +1,26 @@
 .owner-info{
-  border: 1px solid rgb(200, 200, 200);
+  // border: 1px solid rgb(200, 200, 200);
   width: 50px;
   margin-left: 40px;
   padding: 12px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 3px;
+  border-radius: 10px;
   padding-top: 20px;
 }
+
+.booking_start_date, .booking_start_time, .booking_end_time, .booking_guests {
+  font-family: 'Times New Roman', Times, serif;
+}
+
 .line-divider {
   border: 0.4px solid black;
   margin-bottom: 20px;
 }
+
+.title-host {
+  font-family: 'Noto Serif Display', serif;
+}
+
 .extra-card {
   width: 100px;
   height: 100px;
@@ -20,8 +30,8 @@
   color: red;
   margin-left: 340px;
   font-size: 16px;
-
 }
+
 #pin {
   color: red;
 }
@@ -31,6 +41,7 @@
   margin: 0;
   font-size: 20px;
 }
+
 .text {
   font-family: 'Noto Serif Display', serif;
   font-size: 20px;
@@ -45,10 +56,6 @@
   margin-bottom: 0 !important;
 }
 
-.title-host {
-  font-family: 'Noto Serif Display', serif;
-}
-
 .meter {
   font-family: 'Noto Serif Display', serif;
   font-size: 20px;
@@ -58,4 +65,9 @@
 .description {
   font-family: 'Noto Serif Display', serif;
   font-size: 18px;
+}
+
+.reviews-section {
+  width: 100%;
+  margin-bottom: 100px;
 }

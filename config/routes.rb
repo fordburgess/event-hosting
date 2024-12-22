@@ -10,7 +10,9 @@ Rails.application.routes.draw do
       get :map
     end
   end
-  resources :bookings, only: [:show, :destroy]
+  resources :bookings, only: [:show, :destroy] do
+    get 'payment_confirmation', on: :member
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
 
