@@ -1,5 +1,52 @@
 
 <div class="map-container">
-  <div class="link"><%= link_to 'Back', venues_path %> </div>
-  <div id="map" style="height: 500px; width: 500px; z-index: 1;"></div>
+  <%= link_to 'Back', venues_path, class: "link" %>
+  <div id="map" style="height: 100%; width: 100%; z-index: 0;"></div>
 </div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  document.addEventListener('turbolinks:load', function () {
+    const mapElement = document.getElementById('map');
+    const markers = <%= raw @markers.to_json() %>
+    const markerIconUrl = "<%= asset_path('v-logo.png') %>";
+
+    console.log(markers)
+
+    if (mapElement) {
+      var map = L.map('map').setView([51.505, -0.09], 13);
+
+      // Add OpenStreetMap tiles
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+       const customIcon = L.icon({
+          iconUrl: markerIconUrl,
+          iconSize: [50, 50],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -32]
+        });
+
+      markers.forEach(function(venue) {
+
+        L.marker([venue.latitude, venue.longitude], { icon: customIcon}).addTo(map)
+          .bindPopup(`
+            <a href="/venues/${venue.id}" style="text-decoration: none; color: #000">
+              <div class="popup-container">
+                <img src="${venue.photo_url}" style="height: 150px; width: 100%; margin-bottom: 10px; object-fit: cover"/>
+                <p style="font-size: 1rem; font-family: Noto Serif Display; margin: 0 0 5px 0;">${venue.title}</p>
+                <p style="font-size: 0.85rem; font-family: Noto Serif Display; margin: 0 0 5px 0;"">$${venue.rate}/hour</p>
+              </div>
+            </a>
+          `);
+      });
+
+      map.invalidateSize();
+    }
+  });
+
+  Rails.start()
+  Turbolinks.start()
+  ActiveStorage.start()
+</script>
