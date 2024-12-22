@@ -43,29 +43,37 @@
       <div class="featured-list">
         <% @featured_venues.each do |venue| %>
           <div class="venue-card">
-            <%= image_tag venue.photo, alt: venue.title %>
-            <p class="venue-title"><%= venue.title %></p>
-            <p class="venue-subinfo"><%= venue.location %></p>
-            <p class="venue-subinfo" style="font-weight: 400">$<%= venue.rate %> / hour</p>
-          </div>
-
+          <%= link_to venue_path(venue), style: "text-decoration: none;" do %>
+              <%= image_tag venue.photo, alt: venue.title %>
+              <p class="venue-title" style="color: #000"><%= venue.title %></p>
+              <p class="venue-subinfo"><%= venue.location %></p>
+              <p class="venue-subinfo" style="font-weight: 400">$<%= venue.rate %> / hour</p>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>
     <div class="featured">
       <h2 class="featured-head">Venues Near You</h2>
       <p class="featured-subhead"><%= @city %></p>
-      <div class="featured-list">
-        <% @nearby_venues.each do |venue| %>
-          <div class="venue-card">
-            <%= image_tag venue.photo, alt: venue.title %>
-            <p class="venue-title"><%= venue.title %></p>
-            <p class="venue-subinfo"><%= venue.location %></p>
-            <p class="venue-subinfo" style="font-weight: 400">$<%= venue.rate %> / hour</p>
-          </div>
-
-        <% end %>
-      </div>
+      <% if @nearby_venues.length == 0 %>
+        <div style="height: 300px; font-family: Time New Roman; padding-top: 100px;">
+          <p>No venues near you... <%= link_to new_venue_path, style: "color: #000" do %>Have one to add?<% end %></p>
+        </div>
+      <% else %>
+        <div class="featured-list">
+          <% @nearby_venues.each do |venue| %>
+            <div class="venue-card">
+              <%= link_to venue_path(venue), style: "text-decoration: none;" do %>
+                <%= image_tag venue.photo, alt: venue.title %>
+                <p class="venue-title" style="color: #000"><%= venue.title %></p>
+                <p class="venue-subinfo"><%= venue.location %></p>
+                <p class="venue-subinfo" style="font-weight: 400">$<%= venue.rate %> / hour</p>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
 </div>
 

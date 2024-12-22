@@ -34,7 +34,7 @@
 .heading {
   position: relative;
   text-align: center;
-  top: 200px;
+  top: 150px;
 }
 
 #main {
@@ -64,8 +64,9 @@
 #third {
   font-size: 20px;
   line-height: 25px;
-  font-weight: 350;
+  font-weight: 400;
   font-family: 'Roboto';
+  font-style: italic;
   color: #fff;
 }
 
@@ -118,6 +119,10 @@
     border-radius: 10px;
     margin-bottom: 10px;
   }
+ }
+
+ .venue-card:hover {
+  cursor: pointer;
  }
 
  .venue-card:not(:last-child) {

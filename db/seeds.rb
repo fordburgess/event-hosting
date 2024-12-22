@@ -65,4 +65,14 @@ venue = Venue.new(title: "Forum Fribourg", location: "Fribourg, Switzerland", de
 venue.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 venue.save!
 
+file = URI.open("https://images.squarespace-cdn.com/content/v1/63e1815095586b0aca078b24/23382a0b-f403-4388-ab36-4edb8271f4c4/_DSF7912_cover3.jpg")
+venue = Venue.new(title: "The Falls", location: "Los Angeles, California, USA", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation", featured: false, rate: 400, square_meters: 500, latitude: 34.04533584139357, longitude: -118.25151001910882, user: users.sample)
+venue.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+venue.save!
+
+file = URI.open("https://www.tagvenue.com/resize/36/4b/fit-900-600;32991-main-hall-room.jpg")
+venue = Venue.new(title: "Webster Hall", location: "San Francisco, California, USA", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation", featured: false, rate: 400, square_meters: 500, latitude: 37.79016822911196, longitude: -122.43200617722154, user: users.sample)
+venue.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+venue.save!
+
 puts 'Seed finished'
