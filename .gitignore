@@ -16,6 +16,7 @@
 
 # Ignore sensitive files
 /config/credentials.yml.enc
+/config/master.key
 
 # Ignore test and development environment specific files
 /.byebug_history
