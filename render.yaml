@@ -14,7 +14,9 @@ services:
     rootDir: .
     healthCheckPath: /
     buildCommand: "./bin/render-build.sh"
-    startCommand: "bundle exec puma -C config/puma.rb RAILS_ENV=production bundle exec rails db:migrate rails db:seed"
+    startCommand: |
+      "bundle exec puma -C config/puma.rb"
+      "RAILS_ENV=production bundle exec rails db:migrate && RAILS_ENV=production bundle exec rails db:seed"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
