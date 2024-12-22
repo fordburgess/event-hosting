@@ -7,7 +7,7 @@ class PagesController < ApplicationController
     puts @featured_venues
 
     ip = request.remote_ip
-    ip = '8.8.8.8'
+    # ip = '8.8.8.8'
     @location = IpapiService.get_location(ip)
 
     user_lat = @location["latitude"]

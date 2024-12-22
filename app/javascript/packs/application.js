@@ -7,6 +7,23 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';  // Add Leaflet styles
+
+document.addEventListener('turbolinks:load', function () {
+  const mapElement = document.getElementById('map');
+
+  if (mapElement) {
+    var map = L.map('map').setView([51.505, -0.09], 13);  // Set the initial view
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    map.invalidateSize();
+  }
+});
 
 Rails.start()
 Turbolinks.start()

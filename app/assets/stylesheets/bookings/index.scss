@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&display=swap');
+
 .confirmation {
   background-size: cover;
   background-position: center;
@@ -8,9 +10,8 @@
 .confirm-head {
   margin: 0;
   color: white;
-  text-shadow: 2px 2px 3px black;
   font-size: 100px;
-  font-weight: bold;
+  font-weight: 300;
   text-align: center;
   font-family: 'Noto Serif Display', serif;
   padding-top: 53px;
@@ -21,7 +22,6 @@
   color: white;
   text-align: center;
   font-family: 'Noto Serif Display', serif;
-  text-shadow: 2px 2px 3px black;
   font-size: 23px;
   font-weight: 300;
   font-style: italic;
@@ -31,6 +31,7 @@
   display: flex;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
   margin: 40px;
   overflow: hidden;
   border-radius: 4px;
@@ -48,14 +49,22 @@
 
 .card-confirm h2 {
   font-size: 25px;
-  font-weight: bold;
   margin: 0;
   font-family: 'Noto Serif Display', serif;
   align-self: center;
 }
 
-.card-confirm p {
+.card-confirm h3 {
+  margin: 0;
+  font-family: 'Noto Serif Display', serif;
+  align-self: center;
   font-size: 20px;
+  margin-bottom: 15px;
+  color: #646464;
+}
+
+.card-confirm p {
+  font-size: 15px;
   opacity: .7;
   margin: 0;
   font-family: 'Noto Serif Display', serif;
@@ -91,4 +100,52 @@
     background-color: rgb(156, 194, 156);
     color: white;
   }
+}
+
+.payment-confirmation-container {
+  padding: 50px 150px;
+  width: 100%;
+}
+
+.payment-confirm-header {
+  font-family: 'Noto Serif Display';
+  margin: 0 0 20px 0;
+}
+
+.left-payment-container {
+  width: 40%;
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 500px;
+  box-sizing: border-box;
+}
+
+.payment-info-label {
+  font-family: 'Roboto';
+  margin-bottom: 5px;
+  font-size: 0.85rem;
+}
+
+.card-info-input {
+  padding: 5px;
+  width: 100%;
+}
+
+.card-info-input:hover {
+  cursor: not-allowed;
+}
+
+.right-payment-container {
+  width: 45%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.payment-confirm-venue-photo {
+  width: 55%;
+  height: 30%;
+  border-radius: 3px;
 }

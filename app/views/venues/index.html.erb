@@ -1,59 +1,56 @@
 <div class="container">
   <div class="map-button-container">
-    <h2 class="venues-text">All venues</h2>
+    <h2 class="venues-text" style="font-size: 2.25rem;">Results for <%= @location %></h2>
     <div class="map-link"><%= link_to 'View Map', map_venues_path %></div>
   </div>
-  <div class='d-flex justify-content-between'>
-  <h2 style='margin-right: 20px; font-family: Noto Serif Display, serif; margin-top: 8px'>Filters</h2>
+  <h2 style='margin: 0 20px 5px 0; font-size: 1.2rem; font-family: Noto Serif Display, serif;'>Filters</h2>
+  <div class='d-flex justify-content-between' style="align-items: center">
   <%= form_tag venues_path, class: "filter-form", method: :get do %>
+    <div>
       <%= text_field_tag :location,
-      params[:location],
-      class: "filter-input",
-      placeholder: "Location"
+        params[:location],
+        class: "filter-input",
+        placeholder: "Location",
+        style: "width: 200px"
       %>
       <%= text_field_tag :min_size,
-      params[:min_size],
-      class: "filter-input",
-      placeholder: "Min Size Sq M"
+        params[:min_size],
+        class: "filter-input",
+        placeholder: "Min Size",
+        style: "width: 100px"
       %>
       <%= text_field_tag :max_size,
       params[:max_size],
       class: "filter-input",
-      placeholder: "Max Size Sq M"
+      placeholder: "Max Size",
+      style: "width: 100px"
       %>
-      <%= text_field_tag :min_price,
-      params[:min_price],
-      class: "filter-input",
-      placeholder: "Min Price"
-      %>
-
       <%= text_field_tag :max_price,
       params[:max_price],
       class: "filter-input",
-      placeholder: "Max Price"
+      placeholder: "Max Price",
+      style: "width: 100px"
       %>
-    <%= submit_tag "Find My Venue!", class: "filter-submit-button" %>
+    </div>
+    <%= submit_tag "Search", class: "filter-submit-button" %>
     <% end %>
   </div>
   <div class='cards'>
     <% @venues.each do |venue| %>
-    <div class="card-venue">
-      <div class="card-image" style="background-image: url(<%= cl_image_path venue.photo.key %>)">
-        <button class="btn btn-light btn-venue">
-          <%= link_to "Book now", venue_path(venue), :style=> 'color:white' %>
-        </button>
-      </div>
-      <div class="card-body">
-        <div class="card-info">
-          <h3><%= venue.title %></h3>
-          <p class="location-text"><i class="fa fa-map-pin"></i> <%= venue.location %></p>
-          <p style='margin-top: -20px'><%= venue.description.split(' ')[0..20].join(" ") %>...</p>
+      <%= link_to venue_path(venue), style: "color: #000" do %>
+        <div class="card-venue">
+          <%= image_tag venue.photo, style: "height: 70%; width: 100%;" %>
+          <div class="card-body" style="padding: 10px 10px;" >
+            <div class="card-info">
+              <h3 style="font-size: 1rem; margin: 0;"><%= venue.title %></h3>
+              <p class="location-text"><%= venue.location %></p>
+            </div>
+            <div class="card-price">
+              <p>$<%= venue.rate %>/hour</p>
+            </div>
+          </div>
         </div>
-        <div class="card-price">
-          <p>£<%= venue.rate %>/day</p>
-        </div>
-      </div>
-    </div>
+      <% end %>
     <% end %>
   </div>
 </div>

@@ -11,13 +11,15 @@ class VenuesController < ApplicationController
     query = query.where("rate <= ?", params[:max_price]) if params[:max_price].present?
     @venues = query
 
-    @markers = @venues.geocoded.map do |venue|
-      {
-        lat: venue.latitude,
-        lng: venue.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { venue: venue } )
-      }
-    end
+    @location = params[:location]
+
+    # @markers = @venues.geocoded.map do |venue|
+    #   {
+    #     lat: venue.latitude,
+    #     lng: venue.longitude,
+    #     info_window: render_to_string(partial: "info_window", locals: { venue: venue } )
+    #   }
+    # end
   end
 
   def show
@@ -76,12 +78,9 @@ class VenuesController < ApplicationController
     @venues = Venue.all
 
     @markers = @venues.geocoded.map do |venue|
-      {
-        lat: venue.latitude,
-        lng: venue.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { venue: venue } ),
-        image_url: helpers.asset_url("map-pin.png")
-      }
+      venue.attributes.merge(
+        photo_url: url_for(venue.photo)
+      )
     end
   end
 

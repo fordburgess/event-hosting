@@ -17,23 +17,24 @@
 
 .map-container {
   position: relative;
+  height: 90vh;
 }
 
 .link {
   position: absolute;
   z-index: 1;
-  border: 1px solid white;
-  top: 16px;
+  color: #fff;
+  font-family: Roboto;
+  bottom: 16px;
   left: 16px;
   border-radius: 4px;
   padding: 6px 20px;
-  font-size: 20px;
+  font-size: 15px;
   background-color: #1b4332;
 }
 
-.link a {
-  color: white;
-  font-family: 'Noto Serif Display', serif;
+.link:hover {
+  color: #fff;
 }
 
 .map-card-container {
@@ -54,4 +55,13 @@
 .location-map-text {
   font-size: 15px;
   margin-bottom: 0;
+}
+
+.leaflet-popup-content-wrapper {
+  width: 300px;
+  margin: 0;
+}
+
+
+.popup-container {
 }
