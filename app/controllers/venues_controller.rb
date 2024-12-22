@@ -1,4 +1,5 @@
 class VenuesController < ApplicationController
+  include ActionView::Helpers::DateHelper
   skip_before_action :authenticate_user!, only: [ :index, :show, :map ]
 
   def index
@@ -22,6 +23,18 @@ class VenuesController < ApplicationController
   def show
     @venue = Venue.find(params[:id])
     @booking = Booking.new
+    @reviews = @venue.reviews
+    @rating = (@reviews.average(:rating).to_f).round(2)
+
+    @reviews_with_time_ago = @reviews.map do |review|
+      time_ago = distance_of_time_in_words_to_now(review.created_at)
+      time_ago = time_ago.sub(/^about\s/, '').sub(/^over\s/, '')
+
+      review.attributes.merge(
+        "time_ago" => time_ago,
+        "user_name" => review.user.name,
+      )
+    end
   end
 
   def new

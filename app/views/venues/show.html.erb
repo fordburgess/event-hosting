@@ -40,10 +40,24 @@
     <div style="display: flex; align-items: center; margin-bottom: 10px">
       <h3 style="font-family: Noto Serif Display; margin: 0 15px 0 0;">Reviews -</h3>
       <%= image_tag 'star.png', style: "height: 20px; width: 20px; margin-right: 10px" %>
-      <p style="color: #646464; margin: 0; font-size: 1.5rem; margin-right: 5px">4.93</p>
-      <p style="color: #646464; margin: 0; font-size: 1rem;">(15 Reviews)</p>
+      <p style="color: #646464; margin: 0; font-size: 1.5rem; margin-right: 5px"><%= @rating %></p>
+      <p style="color: #646464; margin: 0; font-size: 1rem;">(<%= @reviews.length %> reviews)</p>
     </div>
     <div class="line-divider"></div>
+    <div class="reviews-container">
+      <% @reviews_with_time_ago.each do |review| %>
+        <div style="margin-bottom: 35px;">
+          <div style="display: flex; align-items: center; margin-bottom: 10px;">
+            <%= image_tag 'anon-pic.png', style: "height: 30px; width: 30px; margin-right: 10px;" %>
+            <p style="font-family: Noto Serif Display; margin: 0 10px 0 0;"><%= review["user_name"] %></p>
+            <p style="margin: 0 10px 0 0; color: #646464;"><%= review["rating"] %> stars</p>
+            <p style="margin: 0; font-size: 0.95rem; color: #646464;"><%= review["time_ago"] %> ago</p>
+          </div>
+          <p style="margin: 0; font-family: Times New Roman; font-size: 1rem;"><%= review["comment"] %></p>
+        </div>
+
+      <% end %>
+    </div>
   </div>
 </div>
 
