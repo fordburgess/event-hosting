@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 # exit on error
+export NODE_OPTIONS=--openssl-legacy-provider
+
+
 set -o errexit
 
 bundle install
