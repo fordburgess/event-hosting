@@ -1,6 +1,5 @@
 .nav-link {
   color: #1b4332;
-  border-bottom-color: white;
   background-color: white;
 
   &:hover {
@@ -22,12 +21,18 @@
   font-size: 24px;
 }
 
+.container {
+  width: 100vw;
+  padding: 50px 0 0 0;
+  box-sizing: border-box;
+  margin-bottom: 100px;
+}
+
 .profile-container {
   display: flex;
   justify-content: space-between;
-  margin-top: 40px;
-  margin-bottom: 50px;
   font-family: 'Noto Serif Display', serif;
+  width: 100%;
 }
 
 .profile-info h3{
@@ -45,13 +50,13 @@
 
 .tab-content {
   overflow: auto;
-  border-top-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-right: 1px solid #dee2e6;
-  border-bottom: 1px solid #dee2e6;
-  border-left: 1px solid #dee2e6;
-  height: 700px;
+  // border-top-right-radius: 3px;
+  // border-bottom-left-radius: 3px;
+  // border-bottom-right-radius: 3px;
+  // border-right: 1px solid #dee2e6;
+  // border-bottom: 1px solid #dee2e6;
+  // border-left: 1px solid #dee2e6;
+  height: 600px;
   padding-top: 30px;
   background-color: white;
 }
@@ -72,15 +77,30 @@
 
 .profile-info {
   align-items: center;
-  text-align: center;
+  text-align: left;
 }
 
 .profile-info > img {
   border-radius: 50%;
-  width: 160px;
-  height: 160px;
+  width: 100px;
+  height: 100px;
   margin-bottom: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.edit-details-link {
+  padding: 10px 35px;
+  background-color: rgb(73, 121, 62);
+  color: white;
+  border: none;
+  transition: 0.4s ease;
+  margin-bottom: 30px;
+  font-family: 'Work Sans';
+
+  &:hover {
+    color: #fff;
+    background-color: rgb(156, 194, 156);
+  }
 }
 
 .card-venue-product {
@@ -141,6 +161,8 @@
 
 .cancel-booking {
   position: absolute;
+  font-size: 0.85rem;
+  font-family: 'Work Sans';
   bottom: 15px;
   right: 15px;
   padding: 8px 20px;

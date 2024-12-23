@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&display=swap');
+
 .navbar-lewagon {
   justify-content: space-between;
   background-color: #1b4332;
@@ -23,6 +25,11 @@
 
 #navbarDropdown {
   height: 40px;
+  border: none;
+}
+
+.dropdown-item {
+  font-family: 'Work Sans' !important;
 }
 
 .nav-item.item{
@@ -31,7 +38,8 @@
 
 .nav-item a {
   text-decoration: none;
-  font-family: 'Work Sans', Helvetica, sans-serif;
+  font-family: 'Noto Serif Display';
+  font-size: 0.9rem;
 }
 
 .navbar-nav {

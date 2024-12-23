@@ -24,6 +24,16 @@
       <p class="price"> £<%= @venue.rate %>/hour <strong style="font-size: 15px; font-weight: 200; color: #646464;">(price may vary depending on number of guests)</strong></p>
       <div class="line-divider"> </div>
       <div class="description"><p style=" width: 100%; font-family: Times New Roman"><%= @venue.description %></p></div>
+      <div>
+        <p style="margin-bottom: 5px;">Popular for:</p>
+        <div style="display: flex; margin-left: -3px">
+          <% @venue.tags.each do |tag| %>
+            <div style="background-color: #e6e6e6; color: #404040; padding: 2px 4px; margin: 3px; border-radius: 4px;">
+              <p style="font-size: 0.7rem; margin: 0; font-family: Work Sans"><%= tag.name %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
     <div style="width:35%; padding: 0 20px;" class="owner-info">
       <%= simple_form_for [@venue, @booking] do |f| %>

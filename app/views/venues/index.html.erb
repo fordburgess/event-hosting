@@ -31,6 +31,11 @@
       placeholder: "Max Price",
       style: "width: 100px"
       %>
+      <%= select_tag :tag_ids,
+      options_for_select([['Category', nil, { disabled: true, selected: true }] ] + @tags.map { |tag| [tag.name, tag.id] }, params[:tag_ids]),
+      class: "filter-input",
+      style: 'padding: 7px;'
+      %>
     </div>
     <%= submit_tag "Search", class: "filter-submit-button" %>
     <% end %>
@@ -39,7 +44,7 @@
     <% @venues.each do |venue| %>
       <%= link_to venue_path(venue), style: "color: #000" do %>
         <div class="card-venue">
-          <%= image_tag venue.photo, style: "height: 70%; width: 100%;" %>
+          <%= image_tag "castle.webp", style: "height: 60%; width: 100%;" %>
           <div class="card-body" style="padding: 10px 10px;" >
             <div class="card-info">
               <h3 style="font-size: 1rem; margin: 0;"><%= venue.title %></h3>
@@ -48,6 +53,13 @@
             <div class="card-price">
               <p>$<%= venue.rate %>/hour</p>
             </div>
+          </div>
+          <div style="display: flex; position: absolute; bottom: 8px; left: 8px;">
+            <% venue.tags.each do |tag| %>
+              <div style="background-color: #e6e6e6; color: #404040; padding: 2px 4px; margin: 3px; border-radius: 4px;">
+                <p style="font-size: 0.7rem; margin: 0; font-family: Work Sans"><%= tag.name %></p>
+              </div>
+            <% end %>
           </div>
         </div>
       <% end %>

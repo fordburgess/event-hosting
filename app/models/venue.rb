@@ -3,6 +3,9 @@ class Venue < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :reviews
 
+  has_many :taggings
+  has_many :tags, through: :taggings
+
   has_one_attached :photo
 
   geocoded_by :location
