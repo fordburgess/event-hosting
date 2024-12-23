@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_12_22_232522) do
+ActiveRecord::Schema.define(version: 2024_12_23_002851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,21 @@ ActiveRecord::Schema.define(version: 2024_12_22_232522) do
     t.index ["venue_id"], name: "index_reviews_on_venue_id"
   end
 
+  create_table "taggings", force: :cascade do |t|
+    t.bigint "venue_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+    t.index ["venue_id"], name: "index_taggings_on_venue_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -107,5 +122,7 @@ ActiveRecord::Schema.define(version: 2024_12_22_232522) do
   add_foreign_key "bookings", "venues"
   add_foreign_key "reviews", "users"
   add_foreign_key "reviews", "venues"
+  add_foreign_key "taggings", "tags"
+  add_foreign_key "taggings", "venues"
   add_foreign_key "venues", "users"
 end

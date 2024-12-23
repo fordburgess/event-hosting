@@ -3,12 +3,19 @@ class VenuesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show, :map ]
 
   def index
+    @tags = Tag.all
+
     query = Venue.all
     query = query.where("location ILIKE ?", "%#{params[:location]}%") if params[:location].present?
     query = query.where("square_meters >= ?", params[:min_size]) if params[:min_size].present?
     query = query.where("square_meters <= ?", params[:max_size]) if params[:max_size].present?
     query = query.where("rate >= ?", params[:min_price]) if params[:min_price].present?
     query = query.where("rate <= ?", params[:max_price]) if params[:max_price].present?
+
+    if params[:tag_ids].present?
+      query = query.joins(:tags).where(tags: { id: params[:tag_ids] }).distinct
+    end
+
     @venues = query
 
     @location = params[:location]
@@ -87,7 +94,7 @@ class VenuesController < ApplicationController
   private
 
   def venue_params
-    params.require(:venue).permit(:title, :location, :description, :rate, :square_meters, :image_url, :photo)
+    params.require(:venue).permit(:title, :location, :description, :rate, :square_meters, :image_url, :photo, tag_ids: [])
   end
 
 end
