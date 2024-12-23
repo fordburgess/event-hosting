@@ -44,7 +44,7 @@
     <% @venues.each do |venue| %>
       <%= link_to venue_path(venue), style: "color: #000" do %>
         <div class="card-venue">
-          <%= image_tag "castle.webp", style: "height: 60%; width: 100%;" %>
+          <%= image_tag venue.photo, style: "height: 60%; width: 100%;" %>
           <div class="card-body" style="padding: 10px 10px;" >
             <div class="card-info">
               <h3 style="font-size: 1rem; margin: 0;"><%= venue.title %></h3>
